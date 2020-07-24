@@ -25,10 +25,11 @@ class Flat extends Component {
     return (
         <div className={clas} onClick={this.handleClick}>
           <div className="product">
-            <img src={this.props.flat.imageUrl} alt={this.props.flat.imageUrl} />
+          <iframe src={this.props.flat.view}></iframe>
             <div className="infos">
               <h2>{this.props.flat.name}</h2>
-              <p>{this.props.flat.price}{this.props.flat.priceCurrency}</p>
+              <p>{this.props.flat.direction}</p>
+              <p>{this.props.flat.area}</p>
             </div>
           </div>
         </div>

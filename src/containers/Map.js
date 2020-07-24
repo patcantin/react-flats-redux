@@ -7,7 +7,7 @@ import classes from './Map.module.scss';
 
 const Map = (props) => {
   let marker = null;
-  let center = { lat: 48.856614, lng: 2.352222 };
+  let center = { lat: 45.5807055, lng: -73.6511405 };
 
   if (props.selectedFlat) {
     marker = (
