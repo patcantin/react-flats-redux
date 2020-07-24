@@ -2,22 +2,31 @@ import React, { Component } from 'react';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectedFlat } from '../actions';
+import { selectFlat } from '../actions';
+//import classes from './Flat.module.scss';
+import './flat.css';
 
-import classes from './Flat.module.scss';
 
 class Flat extends Component {
-  handleClick = (flat) => {
+
+  handleClick = () => {
     // create a redux action
-    this.props.selectedFlat(this.props.flat);
+    this.props.selectFlat(this.props.flat); // this.props.selectFlat from actions.js
+
 
   }
   render() {
+
+    let clas = "Flat";
+    if (this.props.flat === this.props.selectedFlat) { // this.props.selectedFlat from selectedFlatReducer (see mapReduxStateToProps below)
+      clas += " selected";
+    }
+
     return (
-        <div className={classes.Flat} onClick={this.handleClick}>
-          <div className={classes.product}>
+        <div className={clas} onClick={this.handleClick}>
+          <div className="product">
             <img src={this.props.flat.imageUrl} alt={this.props.flat.imageUrl} />
-            <div className={classes.infos}>
+            <div className="infos">
               <h2>{this.props.flat.name}</h2>
               <p>{this.props.flat.price}{this.props.flat.priceCurrency}</p>
             </div>
@@ -29,11 +38,17 @@ class Flat extends Component {
 
 function mapDispatchToProps(dispatch) {
  return bindActionCreators(
- { selectedFlat: selectedFlat },
+ { selectFlat },
  dispatch
  );
 }
 
+function mapReduxStateToProps(reduxState) {
+ return {
+ selectedFlat: reduxState.selectedFlat
+ };
+}
 
 
-export default connect(null, mapDispatchToProps) (Flat);
+
+export default connect(mapReduxStateToProps, mapDispatchToProps) (Flat);

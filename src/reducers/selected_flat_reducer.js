@@ -1,13 +1,13 @@
 //The reducer receive an action and a current state
 
-const selectedflatReducer = (state, action)  => {
+const selectedFlatReducer = (state, action)  => {
   if (state === undefined){
     return null;
   }
 
 
   // Same as below
-  // if (action.type === 'SET_FLATS') {
+  // if (action.type === 'SELECTED_FLAT') {
   //   return action.payload;  // to update the state
   // } else {
   //   return state; // return the current state
@@ -22,4 +22,4 @@ const selectedflatReducer = (state, action)  => {
   }
 }
 
-export default selectedflatReducer;
+export default selectedFlatReducer;

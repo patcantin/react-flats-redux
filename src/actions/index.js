@@ -8,7 +8,7 @@ export function setFlats() {
  }
 }
 
-export function selectedFlat(flat) {
+export function selectFlat(flat) {
  // TODO: Api call! For now, simulate a DB
  return {
  type: 'SELECTED_FLAT',
