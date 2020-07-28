@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectFlat } from '../actions';
 //import classes from './Flat.module.scss';
-import './flat.css';
+import './flat2.css';
 
 
 class Flat extends Component {
@@ -24,15 +24,18 @@ class Flat extends Component {
 
     return (
         <div className={clas} onClick={this.handleClick}>
-          <div className="product">
+          <div class="card-trip">
           <iframe src={this.props.flat.view}></iframe>
-            <div className="infos">
+            <div class="card-trip-infos">
+              <div>
               <h2>{this.props.flat.name}</h2>
               <p>{this.props.flat.direction}</p>
               <p>{this.props.flat.area}</p>
             </div>
           </div>
         </div>
+         </div>
+
       )
   }
 }

@@ -1,5 +1,7 @@
 //The reducer receive an action and a current state
 
+import { SET_FLATS } from '../actions';
+
 const flatsReducer = (state, action)  => {
   if (state === undefined){
     return [];
@@ -15,7 +17,7 @@ const flatsReducer = (state, action)  => {
 
   // Same as above
   switch(action.type) {
-    case 'SET_FLATS':
+    case SET_FLATS:
       return action.payload; //returns the new state in the store
     default:
       return state;

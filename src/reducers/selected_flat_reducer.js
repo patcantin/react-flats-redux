@@ -1,5 +1,7 @@
 //The reducer receive an action and a current state
 
+import { SELECTED_FLAT } from '../actions';
+
 const selectedFlatReducer = (state, action)  => {
   if (state === undefined){
     return null;
@@ -15,7 +17,7 @@ const selectedFlatReducer = (state, action)  => {
 
   // Same as above
   switch(action.type) {
-    case 'SELECTED_FLAT':
+    case SELECTED_FLAT:
       return action.payload; //returns the new state in the store
     default:
       return state;
