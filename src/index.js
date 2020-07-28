@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { logger } from 'redux-logger'; // to obtain logs in the browser console about previous/new states
+import reduxPromise from 'redux-promise';
 
 import flatsReducer from './reducers/flats_reducer';
 import selectedFlatReducer from './reducers/selected_flat_reducer';
@@ -15,9 +17,11 @@ const reducers = combineReducers({
  selectedFlat: selectedFlatReducer
 });
 
+const middlewares = applyMiddleware(logger, reduxPromise);
+
 ReactDOM.render(
   //<React.StrictMode>
-    <Provider store={createStore(reducers)}>
+    <Provider store={createStore(reducers, {}, middlewares)}>
       <App />
     </Provider>,
   //</React.StrictMode>,

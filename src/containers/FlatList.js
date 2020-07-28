@@ -11,7 +11,7 @@ import classes from './FlatList.module.scss';
 class FlatList extends Component {
 
   componentWillMount () {
-    this.props.setFlats(); //triggering the action
+    this.props.setFlats(); //triggering the action setFlats in actions/index.js
   }
 
   render() {
