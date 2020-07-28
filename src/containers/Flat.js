@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectFlat } from '../actions';
 //import classes from './Flat.module.scss';
-import './flat2.css';
+import './flat.css';
 
 
 class Flat extends Component {

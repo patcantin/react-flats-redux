@@ -1,8 +1,10 @@
 .FlatList {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
+  width: 50%;
   border-right: 1px solid black;
   height: 100vh;
   background-color: rgba(0,0,0,0.1);
+  cursor: all-scroll;
+  overflow: scroll;
 }
