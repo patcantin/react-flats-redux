@@ -1,6 +1,21 @@
 {
   "channel": "general",
   "messages": [
-    
+    {
+      "id": 1,
+      "author": "Boris",
+      "content": "Salut",
+      "channel": "general",
+      "created_at": "2014-11-06T14:23:26.104Z",
+      "updated_at": "2014-11-06T14:23:26.104Z"
+    },
+    {
+      "id": 2,
+      "author": "Seb",
+      "content": "Yo",
+      "channel": "general",
+      "created_at": "2014-11-06T14:23:49.323Z",
+      "updated_at": "2014-11-06T14:23:49.323Z"
+    }
   ]
 }
